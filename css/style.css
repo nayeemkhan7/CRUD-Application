@@ -17,3 +17,61 @@ body{
   	background-size: cover;
   	background-attachment: fixed;
 }
+.login-box{
+	background: rgba(178,186,187,0.8);
+	padding: 20px;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	margin-top: 70px;
+}
+
+.register-box{
+	background: rgba(178,186,187,0.8);
+	padding: 20px;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	margin-top: 40px;
+}
+
+.form-group{
+	margin: 20px 0;
+}
+
+p{
+	color: #444;
+	font-size: 16px;
+}
+
+
+.btn-x{
+	padding: 8px 40px;
+	border: 1px solid #bbb;
+	margin-top: 15px;
+}
+
+
+
+
+
+/*All Users Page*/
+.all-users{
+	margin-top: 50px;
+}
+.user-x{
+	color: #fff;
+}
+.btn-group{
+	margin: -7px 0;
+}
+.btn-action{
+	padding: 3px 6px;
+	margin : 0px;
+	font-size: 11px;
+}
+
+
+
+/*Update User Page*/
+.update-ok{
+
+}
