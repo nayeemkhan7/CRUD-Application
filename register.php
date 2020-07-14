@@ -1,42 +1,16 @@
-<?php include "db.php" ; ?>
-<?php include "header.php" ; ?>
-
-
-<!-- ========== PHP Code Starts ========== -->
 <?php
-
-$registerMsg = "";
-
-if (isset($_POST['register-btn'])) {
-
-  $username  = $_POST['username'] ;
-  $password  = $_POST['password']  ;
-  $email     = $_POST['email'] ;
-  $mobile    = $_POST['mobile'] ;
-  $address   = $_POST['address'] ;
-
-  // Encryption of the Password ::
-  $encryptedPass = SHA1($password) ;
-
-
-  // SQL Query ::
-  $query = "INSERT INTO user (username, password, email, mobile, address) VALUES ('$username','$encryptedPass','$email','$mobile','$address') " ;
-
-  
-  $addNewUser = mysqli_query($connect ,$query);
-
-
-  if (!$addNewUser) {
-    die("Query Error ".mysqli_error($connect)) ;
-  }
-  else{
-    $registerMsg = '<div class="alert alert-success">Congratulations ' .$username . ' ! You are now a member of this platform.</div>' ;
-  }
-
-}
-
+  include "db.php" ;
+  include "header.php" ;
+  include "functions.php" ;
 ?>
-<!-- ========== PHP Code Ends ========== -->
+
+
+
+<!-- PHP Code Starts -->
+<?php
+  registerUser() ;
+?>
+<!-- PHP Code Ends -->
 
 
 
@@ -88,9 +62,11 @@ if (isset($_POST['register-btn'])) {
 
           </form>
 
+          <!-- PHP Code Starts -->
           <?php
-            echo $registerMsg ;
+            // echo $registerMsg ;
           ?>
+          <!-- PHP Code Ends -->
 
         </div>
 

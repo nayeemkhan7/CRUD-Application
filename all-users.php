@@ -1,5 +1,8 @@
-<?php include "db.php" ; ?>
-<?php include "header.php" ; ?>
+<?php
+  include "db.php" ;
+  include "header.php" ;
+  include "functions.php" ;
+?>
 
 
 <!-- ========== PHP Code Starts ========== -->
@@ -58,7 +61,9 @@
             <td><?php echo $address ; ?></td>
             <td>
               <div class="btn btn-group">
+                <!-- Update Button -->
                 <a href="update-user.php?update=<?php echo $userId;?> " class="btn btn-info btn-action">Update</a>
+                <!-- Delete Button -->
                 <a href="all-users.php?delete=<?php echo $userId ;?>" class="btn btn-danger btn-action">Delete</a>
               </div>
             </td>
@@ -66,7 +71,7 @@
               
           <?php
 
-            }
+            }  // While Loop Ends ::
 
           ?>
 
@@ -83,25 +88,9 @@
 
 <!-- ========== PHP Code Starts ========== -->
 
-  <?php
-
-    if (isset($_GET['delete'])) {
-
-      $query = "DELETE FROM user WHERE id = $userId " ;
-      $deleteQuery = mysqli_query($connect, $query);
-
-      header("Location: all-users.php");
-
-      if (!$deleteQuery){
-        die("Query Failed ! ". mysqli_error($connect)) ;
-      }
-      else{
-        // echo "Delete Successful !" ; 
-      }
-
-    }
-
-  ?>
+<?php
+  deleteUser() ;
+?>
 
 <!-- ========== PHP Code Ends ========== -->
 
